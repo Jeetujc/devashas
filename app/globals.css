@@ -1,26 +1,67 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@plugin "daisyui/theme" {
+    name: "corporate";
+    default: true;
+    prefersdark: true;
+    color-scheme: "light";
+    --color-base-100: #faf6f7;
+    --color-base-200: #f0e6e8;
+    --color-base-300: #e6dadd;
+    --color-base-content: oklch(22.389% 0.031 278.072);
+    --color-primary: #7B112c;
+    --color-primary-content: #ffffff;
+    --color-secondary: #9B1c3d;
+    --color-secondary-content: oklch(100% 0 0);
+    --color-accent: #C44569;
+    --color-accent-content: oklch(100% 0 0);
+    --color-neutral: #1F1F1F;
+    --color-neutral-content: #EDEDED;
+    --color-info: oklch(60% 0.126 221.723);
+    --color-info-content: oklch(100% 0 0);
+    --color-success: oklch(62% 0.194 149.214);
+    --color-success-content: oklch(100% 0 0);
+    --color-warning: oklch(85% 0.199 91.936);
+    --color-warning-content: oklch(0% 0 0);
+    --color-error: oklch(58% 0.253 17.585);
+    --color-error-content: oklch(0% 0 0);
+    --radius-selector: 0.25rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.25rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
   }
-}
+  
+  @keyframes slide-in-left {
+    from {
+      opacity: 1;
+      transform: translateX(-120px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slide-in-left {
+    animation: slide-in-left 1.0s ease-out both;
+  }
+  @keyframes slide-in-up {
+    from {
+      opacity: 1;
+      transform: translateY(-120px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+
+  
